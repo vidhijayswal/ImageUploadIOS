@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="imageUploadExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dmr-jy-teX">
+                                <rect key="frame" x="0.0" y="20" width="375" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="eF3-kd-kLj"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SSd-gO-eEi">
+                                <rect key="frame" x="137.5" y="190" width="100" height="30"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="VaZ-jD-t1j"/>
+                                </constraints>
+                                <state key="normal" title="Upload">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="uploadButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UXw-Nh-gwm"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2sv-8d-z5k">
+                                <rect key="frame" x="10" y="240" width="355" height="2"/>
+                                <color key="progressTintColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 %" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="97k-J1-KOB">
+                                <rect key="frame" x="174.5" y="252" width="26" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="2sv-8d-z5k" secondAttribute="trailing" constant="10" id="5Hf-n0-rPP"/>
+                            <constraint firstItem="2sv-8d-z5k" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="5Sz-cd-fNb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dmr-jy-teX" secondAttribute="trailing" id="6gm-oO-3gg"/>
+                            <constraint firstItem="2sv-8d-z5k" firstAttribute="top" secondItem="SSd-gO-eEi" secondAttribute="bottom" constant="20" id="ANI-TA-dCj"/>
+                            <constraint firstItem="SSd-gO-eEi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bFd-aw-J5d"/>
+                            <constraint firstItem="SSd-gO-eEi" firstAttribute="top" secondItem="dmr-jy-teX" secondAttribute="bottom" constant="20" id="ewJ-L3-EOe"/>
+                            <constraint firstItem="97k-J1-KOB" firstAttribute="top" secondItem="2sv-8d-z5k" secondAttribute="bottom" constant="10" id="jqV-MP-5fU"/>
+                            <constraint firstItem="dmr-jy-teX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="sZG-pL-0le"/>
+                            <constraint firstItem="dmr-jy-teX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wrk-8C-e82"/>
+                            <constraint firstItem="97k-J1-KOB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yuI-pa-QAZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageUploadProgressView" destination="2sv-8d-z5k" id="Iro-Q0-Wdh"/>
+                        <outlet property="myImageView" destination="dmr-jy-teX" id="E08-fv-NOj"/>
+                        <outlet property="progressLabel" destination="97k-J1-KOB" id="Srp-qp-ZI7"/>
+                        <outlet property="uploadButton" destination="SSd-gO-eEi" id="rBe-Fm-jL5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="421.60000000000002" y="-323.38830584707648"/>
+        </scene>
+    </scenes>
+</document>
